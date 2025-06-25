@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+html, body, #root {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    background-color: rgb(81, 81, 81);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container-wrapper {
+    flex: 1;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgrey;
+    box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(255, 0, 0, 0.311);
 }
 
-.App-link {
-  color: #61dafb;
+.category {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 255, 0, 0.384);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    place-items: center;
+    gap: 2rem;
+    padding: 2.5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 255, 0.384);
+}
+
+.content > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 1;
+
+    text-align: center;
+
+    background-color: white;
+}
+
+.content > div:hover {
+    background-color: rgb(153, 153, 153);
+    cursor: pointer;
+}   
+
+
+
+
+
+.portfolioRedirect {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    font-size: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.portfolioRedirect:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
