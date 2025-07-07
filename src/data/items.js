@@ -1,11 +1,60 @@
 const items = [
     {
         title: "Title",
-        price: 100,
-        description: "This is a description of the item. It provides details about the product, its features, and benefits.",
-        image: "../assets/item1.jpg",
-        category: "Category 1"
-    }
+        price: 999.99,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum eu lorem sed malesuada.",
+        image: require("../assets/temp.png"),
+        category: ""
+    },
+    {
+        title: "Title",
+        price: 999.99,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum eu lorem sed malesuada.",
+        image: require("../assets/temp.png"),
+        category: ""
+    },
+    {
+        title: "Title",
+        price: 999.99,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum eu lorem sed malesuada.",
+        image: require("../assets/temp.png"),
+        category: ""
+    },
+    {
+        title: "Title",
+        price: 999.99,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum eu lorem sed malesuada.",
+        image: require("../assets/temp.png"),
+        category: ""
+    },
+    {
+        title: "Title",
+        price: 999.99,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum eu lorem sed malesuada.",
+        image: require("../assets/temp.png"),
+        category: ""
+    },
+    {
+        title: "Title",
+        price: 999.99,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum eu lorem sed malesuada.",
+        image: require("../assets/temp.png"),
+        category: ""
+    },
+    {
+        title: "Title",
+        price: 999.99,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum eu lorem sed malesuada.",
+        image: require("../assets/temp.png"),
+        category: ""
+    },
+    {
+        title: "Title",
+        price: 999.99,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum eu lorem sed malesuada.",
+        image: require("../assets/temp.png"),
+        category: ""
+    },
 ]
 
 export default items;

@@ -9,11 +9,7 @@ function App() {
             <div className="container-wrapper">
                 <div className="container">
                     <div className="title">
-                        <h2>Title</h2>
-                    </div>
-
-                    <div className="category">
-                        <h3>Sort By</h3>
+                        <h2>E-Shop Title</h2>
                     </div>
 
                     <div className="content">

@@ -8,13 +8,11 @@ function itemCard( {item } ) {
             
         {/* Product Information */}
             <div className="item-info">
-                <div className="title-container">
-                    <a href={item.link} rel="noreferrer" className="item-title">{item.title}</a>
-                </div>
-                <p className="item-price">${item.price.toFixed(2)}</p>
-                <p className="item-description">{item.description}</p>
-                <p className="item-category">Category: {item.category}</p>
-                <button className="add-to-cart">Add to Cart</button>
+                <p className="item-title">{item.title}</p>
+                <p className="item-price"><strong>$</strong>{item.price.toFixed(2)}</p>
+                {/* <p className="item-description">{item.description}</p> */}
+                {/* <p className="item-category">Category: {item.category}</p> */}
+                {/* <button className="add-to-cart">Add to Cart</button> */}
             </div>
         </div>
     )
