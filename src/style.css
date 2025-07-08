@@ -33,7 +33,25 @@ html, body, #root {
     padding-top: 60px;
 }
 
-.title {
+.content {
+    width: 100%;
+    max-width: 1200px;
+    min-height: calc(100vh - 60px);
+    padding: 2.5rem;
+    box-sizing: border-box;
+
+    box-shadow: rgba(0, 0, 0, .25) 0px 0px 10px 0px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header customization */
+
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -50,17 +68,52 @@ html, body, #root {
     background-color: rgb(74, 74, 74);
 }
 
-
-.content {
+.header-content {
     width: 100%;
     max-width: 1200px;
-    height: auto;
-    padding: 2.5rem;
-    box-sizing: border-box;
-
-    box-shadow: rgba(0, 0, 0, .25) 0px 0px 10px 0px;
-    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 2rem;
 }
+
+.header-content h2 {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+/* Cart icon customization */
+
+.cart {
+    position: absolute;
+    right: 2rem;
+}
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+.cart-icon {
+    width: 24px;
+    height: 24px;
+    background-color: white; /* Placeholder since no src */
+}
+
+.cart-count {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Checkout customization */
+
+
+/* Customization for shop cards */
 
 .item-list {
     display: grid;
@@ -70,8 +123,6 @@ html, body, #root {
     max-width: 100%;
     box-sizing: border-box;
 }
-
-/* Customization for shop cards */
 
 .item-list > * {
     text-align: center;
@@ -89,8 +140,6 @@ html, body, #root {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: .5rem;
-    padding: .5rem;
 
     font-size: 1.3rem;
 }
@@ -114,7 +163,8 @@ html, body, #root {
     border-radius: 8px;
     object-fit: cover;
 
-    /* Image gradient effect */
+    /* Image transparent gradient effect */
+
     /* -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
     -webkit-mask-size: 100% 100%;

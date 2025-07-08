@@ -1,26 +1,25 @@
-import React from 'react';
+import { Routes, Route} from 'react-router-dom';
 import './style.css';
-import items from './data/items.js';
-import ItemCard from './components/itemCard.js';
+import Header from './components/Header.js';
+import Home from './pages/Home.js';
+import Cart from './pages/Cart.js';
+import Checkout from './pages/Checkout.js';
+import ThankYou from './pages/ThankYou.js';
 
-function App() {
+export default function App() {
     return (
         <>
+            <Header />
+            
             <div className="container-wrapper">
                 <div className="container">
-                    <div className="title">
-                        <h2>E-Shop Title</h2>
-                    </div>
-
                     <div className="content">
-                        <div className="item-list">
-                            {items.map((item) => (
-                                <ItemCard
-                                    key={item.title}
-                                    item={item}
-                                />
-                            ))}
-                        </div>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/cart" element={<Cart />} />
+                            <Route path="/checkout" element={<Checkout />} />
+                            <Route path="/thank-you" element={<ThankYou />} />
+                        </Routes>
                     </div>
                 </div>
             </div>
@@ -28,10 +27,6 @@ function App() {
             <a href="https://cjampion-8.github.io/project_portfolio" target="_blank" rel="noopener noreferrer" className="portfolioRedirect">
                 Check out my other projects!
             </a>
-
         </>
     )
-};
-
-export default App;
-
+}
