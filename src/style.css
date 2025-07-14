@@ -84,11 +84,16 @@ header {
     text-align: center;
 }
 
+.welcome {
+    position: absolute;
+    left: 1rem;
+}
+
 /* Cart icon customization */
 
 .cart {
     position: absolute;
-    right: 2rem;
+    right: 7rem;
 }
 
 .cart-link {
@@ -110,67 +115,96 @@ header {
     font-size: 0.8rem;
 }
 
-.loading {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-style: italic;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 25%;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 2rem;
-    border-radius: 8px;
-    
-    font-size: 1.2rem;
-    color: white;
-    z-index: 999;
+.logInOut {
+    position: absolute;
+    right: 1rem;
 }
 
-.loading {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-style: italic;
-    text-align: center;
-    
+/* Login form styling */
+.login-inputs {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 25%;
-    background-color: rgba(0, 0, 0, 0.25);
-    padding: 2rem;
-    border-radius: 8px;
-    
-    font-size: 1.2rem;
-    color: white;
-    z-index: 999;
+    gap: 1.5rem;
+    padding: 3rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 20px 0px;
+    backdrop-filter: blur(10px);
+    max-width: 400px;
+    width: 100%;
 }
 
-.error {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-style: italic;
-    text-align: center;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 25%;
-    background-color: rgba(255, 0, 0, 0.25);
-    padding: 2rem;
-    border-radius: 8px;
-    
-    font-size: 1.2rem;
+.login-inputs h1 {
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+    font-weight: 400;
     color: white;
-    z-index: 999;
 }
+
+.login-input,
+.password-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.login-input::placeholder,
+.password-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.login-input:focus,
+.password-input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.login-button {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+/* Error message styling */
+.login-inputs small {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+    text-align: center;
+}
+
+
 
 /* Customization for shop cards */
 
@@ -274,15 +308,6 @@ header {
     height: 100%;
     border-radius: 8px;
     object-fit: cover;
-
-    /* Image transparent gradient effect */
-
-    /* -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat; */
 }
 
 
@@ -295,6 +320,133 @@ header {
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
 }
+
+/* Loading and error states */
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+    max-width: 400px;
+    padding: 3rem;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 20px 0px;
+    backdrop-filter: blur(10px);
+    
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    z-index: 999;
+}
+
+.error {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.1);
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Login component specific styles */
+.login-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.login-inputs {
+    width: 100%;
+    max-width: 400px;
+    padding: 3rem;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 20px 0px;
+    backdrop-filter: blur(10px);
+}
+
+.login-inputs h1 {
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+}
+
+.login-input,
+.password-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.login-input::placeholder,
+.password-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.login-input:focus,
+.password-input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.login-button {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+/* Error message styling */
+.login-inputs small {
+    color: #ff0000;
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+    text-align: center;
+}
+
 
 /* Portfolio */
 
