@@ -1,14 +1,24 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 export default function Cart() {
-    return (
-        <div className="cart-content">
-            <h1>Your Cart</h1>
-            <p>Items in your cart will be displayed here.</p>
+    const [cartItems, setCartItems] = useState([]);
+    const [itemsInCart, setItemsInCart] = useState(false);
 
-            <Link to="/checkout" className="checkout-button">
-                Checkout
-            </Link>
-        </div>
+    return (
+        <>
+            <h1>Your Cart</h1>
+
+            <div className="cart-content">
+                {itemsInCart ?
+                    <p>Items</p>
+                :
+                    <p>There are not items in your cart.</p>}
+
+                <Link to="/checkout" className="checkout-button">
+                    Checkout
+                </Link>
+            </div>
+            </>
     )
 }

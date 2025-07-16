@@ -10,9 +10,6 @@ function productCard( {product} ) {
             <div className="product-info">
                 <p className="product-title">{product.title}</p>
                 <p className="product-price"><strong>$</strong>{product.price.toFixed(2)}</p>
-                {/* <p className="product-description">{product.description}</p> */}
-                {/* <p className="product-category">Category: {product.category}</p> */}
-                {/* <button className="add-to-cart">Add to Cart</button> */}
             </div>
         </div>
     )

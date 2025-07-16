@@ -3,16 +3,13 @@ import axios from 'axios';
 
 // Test login: mor_2314 : 83r5^_
 
-export default function Login({token, setToken}) {
-    const [username, setUsername] = useState("");
+export default function Login({token, setToken, setUsername}) {
+    const [username, setLocalUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
     const loginHandler = () => {
-
-        // Clear previous inputs and values.
-        setUsername("");
-        setPassword("");
+        setPassword(""); // Clear previous inputs and values.
         setError("");
 
         axios({
@@ -28,7 +25,9 @@ export default function Login({token, setToken}) {
         }).then(response=>{
             console.log(response.data.token);
             setToken(response.data.token);
-            localStorage.setItem("userToken", response.data.token);
+            localStorage.setItem("userToken", response.data.token); // Save token and username to localStorage
+            localStorage.setItem("username", username);
+            setUsername(username); // Pass username to App.js
         }).catch(error=>{
             console.log(error);
             setError(error.response?.data || error.message || "Login failed");
@@ -44,7 +43,7 @@ export default function Login({token, setToken}) {
                     placeholder="Username" 
                     className="login-input" 
                     value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    onChange={(e) => setLocalUsername(e.target.value)}
                 />
                 <input 
                     type="password" 
@@ -67,6 +66,11 @@ export default function Login({token, setToken}) {
                     >
                         Log In
                     </button>
+                
+                <a href="/create-account" className="create-account-link">
+                    Don't have an account? Sign up here
+                </a>
+                
             </div>
         </div>
     )

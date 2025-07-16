@@ -196,6 +196,19 @@ header {
     transform: translateY(0);
 }
 
+.create-account-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.create-account-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
 /* Error message styling */
 .login-inputs small {
     color: #ff6b6b;
