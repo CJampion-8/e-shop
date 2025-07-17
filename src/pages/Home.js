@@ -1,5 +1,6 @@
 import ProductCard from '../components/ProductCard';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { apiService } from '../data/api.js';
 
 export default function Home() {
@@ -36,10 +37,9 @@ export default function Home() {
         <>
             <div className="product-list">
                 {products.map((product) => (
-                    <ProductCard
-                        key={product.title}
-                        product={product}
-                    />
+                    <Link key={product.id} to={`/details/${product.id}`} className="product-link">
+                    <ProductCard product={product} />
+                    </Link>
                 ))}
             </div>
         </>

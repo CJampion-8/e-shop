@@ -1,10 +1,8 @@
-function productCard( {product} ) {
+export default function productCard( {product} ) {
     return (
         // product Image
         <div className="product-card">
-            <a href={product.link} rel="noreferrer" className="product-image-link">
                 <img src={product.image} alt={product.title} className={"product-image"} />
-            </a>
             
         {/* Product Information */}
             <div className="product-info">
@@ -14,5 +12,3 @@ function productCard( {product} ) {
         </div>
     )
 }
-
-export default productCard;

@@ -8,6 +8,7 @@ import Checkout from './pages/Checkout.js';
 import ThankYou from './pages/ThankYou.js';
 import Login from './pages/Login.js';
 import CreateAccount from './pages/CreateAccount.js';
+import ProductDetails from './pages/DetailsPage.js';
 
 export default function App() {
     const [token, setToken] = useState("");
@@ -45,6 +46,7 @@ export default function App() {
                     <div className="content">
                         <Routes>
                             <Route path="/" element={<Home />} />
+                            <Route path="/details/:productId" element={<ProductDetails />} />
                             <Route path="/login" 
                                 element={loggedIn ? <Navigate to="/" replace /> : 
                                 <Login 
